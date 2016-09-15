@@ -5,6 +5,9 @@
  */
 package interfaz;
 
+import clase.Contra;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aldair
@@ -14,8 +17,12 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
+    Contra x;
+    
     public Principal() {
         initComponents();
+        txtLongitud.setText(" 8 ");
+        
     }
 
     /**
@@ -29,8 +36,7 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        Cambiar = new javax.swing.JButton();
+        cmdLimpiar = new javax.swing.JButton();
         txtLongitud = new javax.swing.JTextField();
         txtPass = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
@@ -39,6 +45,12 @@ public class Principal extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jPanel3 = new javax.swing.JPanel();
+        Cambiar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        txtPassDos = new javax.swing.JPasswordField();
+        txtSeguridad = new javax.swing.JButton();
+        cmdCrear = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -48,31 +60,25 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 2, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("PassWord");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 170, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 170, 30));
 
-        jButton1.setBackground(new java.awt.Color(255, 0, 0));
-        jButton1.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Crear");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 160, 40));
-
-        Cambiar.setBackground(new java.awt.Color(255, 0, 0));
-        Cambiar.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
-        Cambiar.setForeground(new java.awt.Color(255, 255, 255));
-        Cambiar.setText("Cambiar");
-        jPanel1.add(Cambiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 160, 40));
-        jPanel1.add(txtLongitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 50, 40));
-        jPanel1.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 120, 30));
+        cmdLimpiar.setBackground(new java.awt.Color(255, 0, 0));
+        cmdLimpiar.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        cmdLimpiar.setForeground(new java.awt.Color(255, 255, 255));
+        cmdLimpiar.setText("Limpiar");
+        jPanel1.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, 160, 40));
+        jPanel1.add(txtLongitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 50, 40));
+        jPanel1.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 120, 30));
 
         jLabel2.setFont(new java.awt.Font("Arial", 2, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("PassWord");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 100, 40));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 100, 40));
 
         jLabel3.setFont(new java.awt.Font("Arial", 2, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Longitud");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 100, 40));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 100, 40));
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -88,11 +94,48 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 220, 80));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 250, 150));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 250, 150));
+
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Cambiar.setBackground(new java.awt.Color(255, 0, 0));
+        Cambiar.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        Cambiar.setForeground(new java.awt.Color(255, 255, 255));
+        Cambiar.setText("Cambiar");
+        jPanel3.add(Cambiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 160, 40));
+
+        jLabel5.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel5.setText("Nueva Contraseña");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 140, -1));
+        jPanel3.add(txtPassDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 200, 30));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 260, 140));
+
+        txtSeguridad.setBackground(new java.awt.Color(255, 0, 0));
+        txtSeguridad.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        txtSeguridad.setForeground(new java.awt.Color(255, 255, 255));
+        txtSeguridad.setText("Seguridad");
+        txtSeguridad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSeguridadActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtSeguridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, 160, 40));
+
+        cmdCrear.setBackground(new java.awt.Color(255, 0, 0));
+        cmdCrear.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        cmdCrear.setForeground(new java.awt.Color(255, 255, 255));
+        cmdCrear.setText("Crear");
+        cmdCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCrearActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 160, 40));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/1DE.jpg"))); // NOI18N
         jLabel4.setText("jLabel4");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 370));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -102,11 +145,41 @@ public class Principal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtSeguridadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSeguridadActionPerformed
+        // TODO add your handling code here:
+        
+        String aux;
+        
+        aux = x.segura();
+        JOptionPane.showMessageDialog(this, aux);
+        
+        
+    }//GEN-LAST:event_txtSeguridadActionPerformed
+
+    private void cmdCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCrearActionPerformed
+        // TODO add your handling code here:
+        
+        try{
+            
+        int longitud;
+        String c2;
+        
+        c2 = txtPass.getText();
+        
+        longitud = Integer.parseInt(txtLongitud.getText());
+        x.setLongitud(longitud);
+        
+        }catch(NumberFormatException k){
+            
+            
+        }
+    }//GEN-LAST:event_cmdCrearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,17 +218,22 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cambiar;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton cmdCrear;
+    private javax.swing.JButton cmdLimpiar;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField txtLongitud;
     private javax.swing.JPasswordField txtPass;
+    private javax.swing.JPasswordField txtPassDos;
+    private javax.swing.JButton txtSeguridad;
     // End of variables declaration//GEN-END:variables
 }
